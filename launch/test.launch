@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <arg name="service_name"                default="speak"/>
+    <arg name="cpu_num_threads"             default="0"/>
+    <arg name="openjtalk_dic_path"          default="$(find orne_voicevox_core)/open_jtalk_dic_utf_8-1.11"/>
+    <arg name="use_gpu"                     default="False"/>
+
+    <node name="orne_voicevox_engine" pkg="orne_voicevox_core" type="test.py" output="screen" respawn="true">
+        <param name="service_name"               value="$(arg service_name)"/>
+        <param name="cpu_num_threads"            value="$(arg cpu_num_threads)"/>
+        <param name="openjtalk_dic_path"         value="$(arg openjtalk_dic_path)"/>
+        <param name="use_gpu"                    value="$(arg use_gpu)"/>
+    </node>
+</launch>
