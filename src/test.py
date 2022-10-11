@@ -40,7 +40,10 @@ class speakNode():
         core.voicevox_load_openjtalk_dict(self.openjtalk_dic_path)
         rospy.loginfo("openjtalk辞書ロード完了")
         rospy.loginfo("サービス準備完了")
-
+        wavestart = core.voicevox_tts("サービス準備完了！", 1)
+        wave_objstart = sa.WaveObject(wavestart, 1, 2, 24000)
+        play_objstart = wave_objstart.play()
+        play_objstart.wait_done()
     def callback_srv(self, req):
         text_inp = req.text
         speaker_id_inp = req.speaker_id
