@@ -25,13 +25,25 @@ pip install -r requirements.txt
 pip install .
 ```
 
+[Open JTalk](https://open-jtalk.sourceforge.net/)辞書フォルダを配置します。Dictionary for Open JTalk 欄の Binary Package (UTF-8)をクリックして「open_jtalk_dic_utf_8-1.11.tar.gz」をダウンロードします。
+これを展開してできた「open_jtalk_dic_utf_8-1.11」フォルダをパケージの中に配置します。
+
+```test.launch```の中の```openjtalk_dic_path```を、展開した辞書フォルダのパスに変更します。
+
 ### 起動
 ```bash
 roslaunch orne_voicevox_core test.launch
 ```
 提示音を鳴らすまでに少々待ちます。
 
+
+本質はRosのサービスので、基本は以下のように使います。
+
 新しい端末を起動して
+```bash
+rosservice call [サービス名] [text] [speaker_id]
+```
+例えば
 ```bash
 rosservice call /speak これは本当に実行できているんですか 1
 ```
