@@ -16,7 +16,7 @@ source ~/catkin_ws/devel/setup.bash
 ```
 
 
-### 環境構築
+### 依存関係の解決
 [本家のconfigure.py](https://github.com/VOICEVOX/voicevox_core/blob/0.13.0/configure.py)を改造して、使用します。
 環境構築するときは、[本家のReleases(VOICEVOX CORE 0.13.1)](https://github.com/VOICEVOX/voicevox_core/releases/tag/0.13.1)から、ビルド済みのコアライブラリをダウンロードし、使用します。
 ```bash
